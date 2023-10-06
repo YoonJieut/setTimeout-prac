@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: bisque;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="sosa"></div>
+  </div>
+
+
+  <script>
+    const sosa = document.getElementById('sosa');
+    const root = document.getElementById('root');
+    console.log(sosa);
+    sosa.style.width = "100px";
+    sosa.style.height = "100px";
+    sosa.style.backgroundColor = "black";
+    sosa.style.position = "absolute";
+    // 1초마다 1px이 늘어나도록 작성해주세요
+    
+    let mingu = 0;
+    // let half = window.innerWidth / 2
+    let half = document.body.offsetWidth / 2
+    console.log(half, typeof(half));
+    let move = setInterval(function(){
+      sosa.style.top = mingu + "px";
+      sosa.style.left = mingu + "px";
+      mingu++;
+      // 절반 값에 다다르면 색 바꾸기
+      if(mingu === half ){
+        console.log('hi');
+        // clearInterval(변수);
+        clearInterval(move);
+      }
+    }, 30);
+
+  </script>
+</body>
+</html>
