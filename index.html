@@ -21,6 +21,7 @@
 
   <script>
     const sosa = document.getElementById('sosa');
+    const root = document.getElementById('root');
     console.log(sosa);
     sosa.style.width = "100px";
     sosa.style.height = "100px";
@@ -29,12 +30,29 @@
     // 1초마다 1px이 늘어나도록 작성해주세요
     
     let mingu = 0;
-    
+    let scale = 10;
+    let radius = 0;
     setInterval(function(){
       sosa.style.top = mingu + "px";
+      sosa.style.left = mingu + "px";
+      sosa.style.width = scale + "px";
+      sosa.style.height = scale + "px";
       mingu++;
-    }, 10);
-
+      scale++;
+      if( mingu > 100){
+        root.style.backgroundColor = "white";
+        if( radius < 50){
+          sosa.style.borderRadius = radius + "%";
+          radius++;
+        }
+      }
+      if( mingu > 250) {
+        root.style.backgroundColor = "blue";
+        scale--;
+      }
+    }, 30);
+    // 축하합니다. 애니메이션을 코드로 작성하신 겁니다.(에펙)
+    // 절반 이상 넘어가면, 배경색을 바꿔주세요
 
   </script>
 </body>
