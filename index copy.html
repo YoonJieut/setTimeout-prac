@@ -32,18 +32,28 @@
     let mingu = 0;
     // let half = window.innerWidth / 2
     let half = document.body.offsetWidth / 2
+    let full = document.body.offsetWidth;
     console.log(half, typeof(half));
+
+    
     let move = setInterval(function(){
       sosa.style.top = mingu + "px";
       sosa.style.left = mingu + "px";
       mingu++;
       // 절반 값에 다다르면 색 바꾸기
-      if(mingu === half ){
-        console.log('hi');
-        // clearInterval(변수);
-        clearInterval(move);
+      // if(mingu === half ){
+      //   console.log('hi');
+      //   // clearInterval(변수);
+      //   clearInterval(move);
+      // }
+
+      // 끝까지 가면 반대로 튕기는 함수
+      if( mingu === full-100 ){
+        sosa.style.top = mingu + "px";
+        sosa.style.left = mingu + "px";
+        mingu--;
       }
-    }, 30);
+    }, 10);
 
   </script>
 </body>
