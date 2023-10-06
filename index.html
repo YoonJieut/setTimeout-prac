@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: bisque;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="sosa"></div>
+  </div>
+
+
+  <script>
+    const sosa = document.getElementById('sosa');
+    console.log(sosa);
+    sosa.style.width = "100px";
+    sosa.style.height = "100px";
+    sosa.style.backgroundColor = "black";
+    sosa.style.position = "absolute";
+    // 1초마다 1px이 늘어나도록 작성해주세요
+    
+    let mingu = 0;
+    
+    setInterval(function(){
+      sosa.style.top = mingu + "px";
+      mingu++;
+    }, 10);
+
+
+  </script>
+</body>
+</html>
